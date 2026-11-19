@@ -1,0 +1,280 @@
+.pdp {
+  padding: 18px 28px 72px;
+}
+
+.pdp-crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.pdp-crumb button {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.pdp-crumb button:hover {
+  text-decoration: underline;
+}
+
+.pdp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.pdp-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.pdp-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #ececec;
+}
+
+.pdp-info h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.pdp-price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pdp-price {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 1.05rem;
+}
+
+.pdp-price s {
+  color: #777;
+  font-weight: 400;
+}
+
+.pdp-sale {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+}
+
+.pdp-stock {
+  margin: 6px 0 0;
+  color: #444;
+  font-size: 0.88rem;
+}
+
+.pdp-rating {
+  margin: 0;
+  color: #333;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.pdp-block {
+  margin-top: 22px;
+}
+
+.pdp-block-first {
+  margin-top: 16px;
+}
+
+.style-select {
+  width: 100%;
+  margin-top: 10px;
+  height: 48px;
+  border: 1px solid #c8c8c8;
+  padding: 0 12px;
+  background: #fff;
+  font: inherit;
+}
+
+.pdp-label,
+.pdp-copy p,
+.pdp-acc p {
+  margin: 0;
+}
+
+.pdp-label {
+  font-size: 0.95rem;
+}
+
+.pdp-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(6, 36px);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c8c8c8;
+  padding: 0;
+  cursor: pointer;
+}
+
+.swatch.is-selected {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.size-row .choice {
+  min-width: 64px;
+}
+
+.choice {
+  min-width: 110px;
+  padding: 10px 14px;
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.choice.is-selected {
+  border-color: #111;
+  border-width: 2px;
+  padding: 9px 13px;
+}
+
+.pdp-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.qty select,
+.add-bag {
+  height: 48px;
+  font: inherit;
+}
+
+.qty select {
+  width: 64px;
+  border: 1px solid #c8c8c8;
+  padding: 0 8px;
+  background: #fff;
+}
+
+.add-bag {
+  flex: 1;
+  border: 0;
+  background: #1a2744;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-bag:hover {
+  background: #141e36;
+}
+
+.pdp-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pdp-boxes p {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #111;
+  font-size: 0.88rem;
+}
+
+.pdp-copy {
+  margin-top: 28px;
+  line-height: 1.45;
+}
+
+.pdp-acc {
+  border-bottom: 1px solid #ddd;
+}
+
+.pdp-acc:first-of-type {
+  margin-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.pdp-acc button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pdp-acc p {
+  padding-bottom: 14px;
+  color: #444;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .pdp-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pdp-boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pdp {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .swatches {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

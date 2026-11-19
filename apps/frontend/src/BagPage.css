@@ -1,0 +1,163 @@
+.bag {
+  padding: 18px 28px 72px;
+}
+
+.bag-crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.bag-crumb button {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.bag-crumb button:hover {
+  text-decoration: underline;
+}
+
+.bag h1 {
+  margin: 8px 0 24px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bag-empty {
+  color: #666;
+}
+
+.bag-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.bag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bag-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.bag-item-name,
+.bag-item-meta,
+.bag-item-price {
+  margin: 0;
+}
+
+.bag-item-name {
+  font-size: 0.98rem;
+}
+
+.bag-item-meta {
+  margin-top: 4px;
+  color: #666;
+  font-size: 0.82rem;
+}
+
+.bag-item-price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.bag-summary {
+  border: 1px solid #ececec;
+  padding: 20px;
+}
+
+.bag-summary h2 {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bag-summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+}
+
+.bag-total {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #111;
+  font-weight: 700;
+}
+
+.bag-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.bag-btn {
+  height: 48px;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bag-btn-primary {
+  background: #1a2744;
+  color: #fff;
+}
+
+.bag-btn-primary:hover {
+  background: #141e36;
+}
+
+.bag-btn-secondary {
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+}
+
+.bag-btn-secondary:hover {
+  background: #f6f6f6;
+}
+
+.bag-done {
+  max-width: 360px;
+}
+
+.bag-done p {
+  margin: 0 0 16px;
+}
+
+@media (max-width: 800px) {
+  .bag-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bag {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bag h1 {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,10 @@
+---
+description: Stock is stored on each product row in AvailableQuantity
+alwaysApply: true
+---
+
+# Inventory
+
+Stock for a sellable product lives in `Products.AvailableQuantity`.
+
+Each barcode is one product row (one brand, style, color, and size). That row's `AvailableQuantity` is the units on hand for that barcode. Do not store stock on `Prices`, on a style, or in a separate inventory table.

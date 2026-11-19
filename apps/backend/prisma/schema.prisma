@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProductType {
+  Pants
+  Shorts
+  Shirts
+  Socks
+}
+
+enum Brand {
+  Nike
+  Adidas
+  Tommy
+}
+
+model Product {
+  id                String      @id @map("Id")
+  productType       ProductType @map("ProductType")
+  color             String      @map("Color")
+  size              String      @map("Size")
+  availableQuantity Int         @map("AvailableQuantity")
+  brand             Brand       @map("Brands")
+  prices            Price[]
+
+  @@map("Products")
+}
+
+model Price {
+  id            String         @id @map("Id")
+  productId     String         @map("ProductId")
+  product       Product        @relation(fields: [productId], references: [id])
+  pricePerUnit  Decimal        @map("PricePerUnit") @db.Decimal(12, 2)
+  isCurrent     Boolean        @map("IsCurrent")
+  purchaseItems PurchaseItem[]
+
+  @@index([productId])
+  @@map("Prices")
+}
+
+model Purchase {
+  id                String         @id @map("Id")
+  subtotal          Decimal        @map("Subtotal") @db.Decimal(12, 2)
+  tax               Decimal        @map("Tax") @db.Decimal(12, 2)
+  total             Decimal        @map("Total") @db.Decimal(12, 2)
+  discount          Decimal        @map("Discount") @db.Decimal(12, 2)
+  purchaseDate      DateTime       @map("PurchaseDate")
+  transactionNumber String         @map("TransactionNumber")
+  customerId        String?        @map("CustomerId")
+  customer          Customer?      @relation(fields: [customerId], references: [id])
+  items             PurchaseItem[]
+
+  @@index([customerId])
+  @@map("Purchases")
+}
+
+model PurchaseItem {
+  id               String   @id @map("Id")
+  purchaseId       String   @map("PurchaseId")
+  purchase         Purchase @relation(fields: [purchaseId], references: [id])
+  priceId          String   @map("PriceId")
+  price            Price    @relation(fields: [priceId], references: [id])
+  purchaseQuantity Int      @map("PurchaseQuantity")
+
+  @@index([purchaseId])
+  @@index([priceId])
+  @@map("PurchaseItems")
+}
+
+model Customer {
+  id        String     @id @map("Id")
+  firstName String     @map("FirstName")
+  lastName  String     @map("LastName")
+  email     String     @map("Email")
+  phone     String     @map("Phone")
+  birthdate DateTime   @map("Birthdate")
+  purchases Purchase[]
+
+  @@map("Customers")
+}
